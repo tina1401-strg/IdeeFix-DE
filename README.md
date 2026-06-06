@@ -3,7 +3,7 @@
 IdeeFix-DE is a German grammatical error correction (GEC) pipeline that combines 
 an encoder-based error detection model with a large language model (LLM) corrector. 
 Instead of letting the LLM correct everything freely we first detect which tokens are actually 
-erroneous using a fine-tuned encoder, and only pass those flagged spans to the LLM 
+erroneous using a fine-tuned encoder, and pass the labeled sentence along with the erroneous sentence to the LLM 
 for correction. This keeps recall stable while significantly improving precision.
 
 ## Motivation
