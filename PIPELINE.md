@@ -2,20 +2,6 @@
 
 Step-by-step instructions to reproduce the full data pipeline, model training, and evaluation.
 
----
-
-IdeeFix-DE/
-├── utils/                  -> Shared utilities (stanza, constants, injection)
-├── resources/              -> german_verbs.txt
-├── data_pipeline/          -> All scripts for data creation and analysis
-├── encoder_detection/      -> Adapted GECToR implementation (training + prediction)
-├── llm_correction/         -> LLM evaluation and prompting scripts
-├── data/                   -> .gitignore (raw, anno, processed, splits)
-├── results/                -> .gitignore (model outputs, predictions)
-├── predict.sh              -> Infer the whole hybrid pipeline
-├── PIPELINE.md             -> Step-by-step reproduction guide
-└── README.md               -> Project overview and setup
-
 ## Environment Setup
 
 ### ASR Environment (conda)
