@@ -1,4 +1,4 @@
-# Python-generated files
+# Python
 __pycache__/
 *.py[oc]
 build/
@@ -8,6 +8,12 @@ wheels/
 
 # Virtual environments
 .venv
+encoder_detection/.venv
 
 # Data
 data/
+archive/
+
+# Models (large binary files)
+encoder_detection/models/
+encoder_detection/results/
