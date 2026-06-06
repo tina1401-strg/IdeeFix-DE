@@ -1,0 +1,32 @@
+[project]
+name = "ideefix-de"
+version = "0.1.0"
+description = "German ASR Grammatical Error Correction Pipeline"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "torch==2.5.1+cu121",
+    "transformers==4.50.0",
+    "tokenizers==0.21.0",
+    "accelerate>=0.26.0",
+    "stanza>=1.9.0",
+    "datasets>=2.0.0",
+    "sentence-transformers>=2.0.0",
+    "charsplit",
+    "editdistance>=0.8.0",
+    "sacrebleu>=2.3.0",
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+    "tqdm>=4.65.0",
+    "tiktoken>=0.13.0",
+    "sentencepiece>=0.2.1",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu121" }
+charsplit = { git = "https://github.com/dtuggener/CharSplit.git" }

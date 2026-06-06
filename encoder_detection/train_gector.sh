@@ -1,0 +1,17 @@
+python train.py \
+    --train_file    ../data/splits/encoder_detection/train.txt \
+    --valid_file    ../data/splits/encoder_detection/dev.txt \
+    --save_dir      ./models/gbert-large \
+    --model_id          gbert-large \
+    --n_epochs          7 \
+    --n_cold_epochs     1 \
+    --lr                1e-5 \
+    --cold_lr           1e-3 \
+    --batch_size        64 \
+    --accumulation      1 \
+    --max_len           128 \
+    --n_max_labels      10 \
+    --p_dropout         0.2 \
+    --label_smoothing   0.1 \
+    --num_warmup_steps  200 \
+    --lr_scheduler_type linear \

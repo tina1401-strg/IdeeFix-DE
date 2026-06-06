@@ -1,0 +1,50 @@
+[
+    {
+        "role": "user",
+        "content": "Satz: Die Bundesregierung möchte das wachsen der Wirtschaft fördern."
+    },
+    {
+        "role": "assistant",
+        "content": "Die Bundesregierung möchte das Wachsen der Wirtschaft fördern."
+    },
+    {
+        "role": "user",
+        "content": "Satz: Das laufen macht mir spaß obwohl es anstrengend ist."
+    },
+    {
+        "role": "assistant",
+        "content": "Das Laufen macht mir spaß obwohl es anstrengend ist."
+    },
+    {
+        "role": "user",
+        "content": "Satz: Er kaufte einen teuren Wagen mit einem großer Motor."
+    },
+    {
+        "role": "assistant",
+        "content": "Er kaufte einen teuren Wagen mit einem großen Motor."
+    },
+    {
+        "role": "user",
+        "content": "Satz: Sie trug ein schönes altem Kleid zu den party"
+    },
+    {
+        "role": "assistant",
+        "content": "Sie trug ein schönes altes Kleid zu den party"
+    },
+    {
+        "role": "user",
+        "content": "Satz: Die Land wirtschaft ist ein wichtiger Teil der deutschen Wirtschaft."
+    },
+    {
+        "role": "assistant",
+        "content": "Die Landwirtschaft ist ein wichtiger Teil der deutschen Wirtschaft."
+    },
+    {
+        "role": "user",
+        "content": "Satz: Er kaufte eine Sonnen brille obwohl das Wetter schlecht was."
+    },
+    {
+        "role": "assistant",
+        "content": "Er kaufte eine Sonnenbrille obwohl das Wetter schlecht was."
+    }
+]
