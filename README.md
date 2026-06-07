@@ -27,8 +27,7 @@ labeling (oracle).
 
 ### GECToR Implementation
 This project uses an adapted version of the 
-[GECToR implementation](https://github.com/...) 
-by [author]. The original architecture is described in:
+[GECToR implementation](https://github.com/gotutiyan/gector). The original architecture is described in:
 > Omelianchuk et al. (2020). GECToR – Grammatical Error Correction: 
 > Tag, Not Rewrite. ACL 2020.
 
