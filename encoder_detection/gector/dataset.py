@@ -4,7 +4,7 @@ import torch
 from tqdm import tqdm
 import os
 from transformers import PreTrainedTokenizer
-# need
+
 class GECToRDataset:
     def __init__(
         self,
@@ -47,14 +47,14 @@ class GECToRDataset:
             'labels': torch.tensor(labels).squeeze(),
             'word_masks': torch.tensor(wmask).squeeze()
         }
-# need
+
     def append_vocab(self, label2id, d_label2id):
         self.label2id = label2id
         self.d_label2id = d_label2id
         for i in range(len(self.labels)):
             self.labels[i] = [self.label2id.get(l, self.label2id['<OOV>']) for l in self.labels[i]]
             self.d_labels[i] = [self.d_label2id[l] for l in self.d_labels[i]]
- #--   
+  
     def get_labels_freq(self, exluded_labels: List[str] = []):
         assert(self.labels is not None and self.d_labels is not None)
         flatten_labels = [ll for l in self.labels for ll in l if ll not in exluded_labels]
@@ -119,8 +119,7 @@ def load_gector_format(
     delimeter: str='SEPL|||SEPR',
 ):  
     srcs = []
-    word_level_labels = []  # the size will be (#sents, seq_length) if not get_interactive_tags,
-                                # (#iteration, #sents, seq_length) if get_interactive_tags
+    word_level_labels = []  
     with open(input_file) as f:
         for line in f:
             src = [x.split(delimeter)[0] for x in line.split()]
@@ -130,7 +129,7 @@ def load_gector_format(
     return srcs, word_level_labels
 
 
-# needed
+
 def load_dataset(
     input_file: str,
     tokenizer: PreTrainedTokenizer,

@@ -1,27 +1,3 @@
-"""
-evaluate_gector.py
-------------------
-Evaluates GECToR detection predictions against gold labels.
-
-Input:
-    --gold_json  JSON file with sent_id, cor, err, plain_tok, labeled
-    --pred       predictions.txt (one label sequence per line)
-
-Output (printed):
-    Per-label and overall precision/recall/F1/F0.5
-    Sentence-level statistics
-
-Output (optional --output):
-    JSON with sent_id, cor, err, gold_labeled, pred_labeled
-    (only sentences with errors or mismatches)
-
-Usage:
-    python evaluate_gector.py \
-        --gold_json  ../data/splits/gector/test_gector.json \
-        --pred       ./results/predictions.txt \
-        --output     ./results/error_analysis.json
-"""
-
 import json
 import argparse
 from collections import defaultdict
