@@ -1,17 +1,3 @@
-"""
-collect_german_sentences.py
----------------------------
-Collects 50k clean German sentences for GEC error injection (Dataset 2).
-
-Sources (25k each):
-    1. HuggingFaceFW/fineweb-2 (deu_Latn) — web/news style
-    2. wikimedia/wikipedia (20231101.de)   — formal/encyclopedic style
-
-Both are streamed — no full download needed.
-Sentences are filtered by word count and saved as a flat JSON list.
-
-"""
-
 import argparse
 import json
 import os

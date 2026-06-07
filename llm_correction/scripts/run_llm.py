@@ -1,25 +1,3 @@
-"""
-eval/run_llm.py
----------------
-Evaluates open-weight LLMs on German ASR GEC.
-
-Usage:
-    python run_llm.py \
-        --model       qwen \
-        --prompt      ../prompts/system_prompt_no_labels.txt \
-        --few_shots   ../few_shots/few_shots_no_labels.json \
-        --input       ../../data/splits/llm/eval_llm.json \
-        --output_dir  ./results
-
-    python run_llm.py \
-        --model       qwen \
-        --prompt      ../prompts/system_prompt_labeled.txt \
-        --few_shots   ../few_shots/few_shots_labeled.json \
-        --with_labels \
-        --input       ../../data/splits/llm/eval_llm.json \
-        --output_dir  ./results
-"""
-
 import json
 import argparse
 from pathlib import Path
@@ -34,10 +12,6 @@ from utils.constants import SEP, get_best_gpu
 
 
 def kill_my_gpu_processes(target_gpu: int):
-    """
-    Kill any python processes from current user running on target GPU.
-    Does NOT pkill all — only kills processes occupying GPU memory.
-    """
     current_pid = os.getpid()
     current_user = os.environ.get("USER", "")
 

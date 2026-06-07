@@ -1,16 +1,3 @@
-"""
-00_download_german_verbs.py
----------------------------
-Downloads German verb infinitives from Wiktionary.
-Used for $WRONG_CAP error detection and injection.
-
-Output:
-    <output_dir>/german_verbs.txt  ← one verb per line
-
-Usage:
-    python 00_download_german_verbs.py --output_dir ./resources
-"""
-
 import requests
 import time
 import argparse

@@ -1,18 +1,3 @@
-"""
-03_inject_detect_error_asr.py
-------------------------------
-Detects real ASR errors in whisper output and injects additional errors
-into clean sentences to reach target error counts.
-
-Error types:
-    $WRONG_CAP   — nominalized verb written in lowercase
-    $WRONG_DECL  — adjective with wrong declension ending
-    $WRONG_COMP  — compound word incorrectly split into parts
-
-Input:  annotated ASR hypothesis JSON files (reference + hypothesis)
-Output: labeled JSON with err/cor/labeled fields
-"""
-
 import sys
 import json
 import random

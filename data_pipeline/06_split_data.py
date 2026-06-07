@@ -1,27 +1,3 @@
-"""
-05_split_data.py
-----------------
-Takes the full error-injected/detected JSON files (wiki + whisper),
-creates stratified train/dev/test splits for GECToR and LLM evaluation,
-and writes JSON, GECToR txt, plain txt, and gold txt formats.
-
-Split strategy:
-    test_llm    : 10,000 sentences (Whisper only, held out first)
-    eval_llm    :    200 sentences (Whisper only, held out)
-    remaining   : split stratified by dominant error type
-                  dev=10% / test_gector=10% / train=80%
-
-Outputs (all under --output_dir):
-    gector/train.json         gector/train.txt
-    gector/dev.json           gector/dev.txt
-    gector/test_gector.json   gector/test_gector.txt
-                              gector/test_plain.txt
-                              gector/test_gold.txt
-    llm/eval_llm.json
-    llm/test_llm.json
-
-"""
-
 import json
 import random
 import argparse

@@ -1,24 +1,3 @@
-"""
-eval/eval_llm.py
-----------------
-Evaluates LLM predictions on German ASR GEC.
-
-Alignment strategy:
-    1. difflib.SequenceMatcher aligns err tokens to pred tokens
-       handles: equal, replace, delete, insert naturally
-    2. German-specific post-processing on top of difflib:
-       - compound joining (wie+viel → wieviel)
-       - contraction handling (im ↔ in+dem)
-       - fuzzy matching for declension changes
-    3. Same alignment runs on err→cor for reference
-    4. Labels assigned by comparing err group label + pred alignment
-
-Usage:
-    python eval_llm.py --results ./results/qwen_labeled_results.json
-    python eval_llm.py --results ./results/qwen_labeled_results.json \
-                       --output  ./results/qwen_labeled_evaluated.json
-"""
-
 import json
 import argparse
 import difflib
@@ -240,14 +219,6 @@ def _align_replace_block(
     tgt_chunk:   list[dict],
     g_to_tgt:    dict,
 ):
-    """
-    Handle replace blocks with German-aware matching:
-    - compound joins (Land+wirtschaft → Landwirtschaft)
-    - contractions (in+dem → im)
-    - fuzzy matches (großer → großen)
-    - deletions within block
-    - insertions within block
-    """
     if not g_indices or not tgt_chunk:
         # all deleted
         for g_idx in g_indices:

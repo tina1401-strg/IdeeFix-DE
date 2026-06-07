@@ -1,9 +1,3 @@
-"""
-utils/constants.py
-------------------
-Shared constants for the IdeeFix-DE pipeline.
-"""
-
 import subprocess
 
 def get_best_gpu(min_free_mb: int = 10000) -> int:

@@ -1,10 +1,3 @@
-"""
-utils/injection_utils.py
-------------------------
-Shared error injection utilities for IdeeFix-DE.
-Used by: data_pipeline/04_inject_error_wiki_fineweb.py
-         data_pipeline/03_inject_detect_error_asr.py
-"""
 from charsplit import Splitter
 from pathlib import Path
 import sys
@@ -37,10 +30,6 @@ def parse_feats(feats_str: str) -> dict:
 
 
 def build_position_map(text: str, tokens: list) -> dict:
-    """
-    Maps token id → (start, end) in text.
-    Handles MWT tokens (vom→von+dem) by sharing the surface span.
-    """
     pos_map = {}
     pointer = 0
     i       = 0
@@ -86,9 +75,6 @@ def build_position_map(text: str, tokens: list) -> dict:
 
 
 def collect_wrong_cap(tokens: list, pos_map: dict, verb_set: set) -> list:
-    """
-    Returns edits: [(start, end, replacement, token_id, label), ...]
-    """
     edits = []
     for token in tokens:
         if token.get("upos") != "NOUN":
@@ -106,9 +92,6 @@ def collect_wrong_cap(tokens: list, pos_map: dict, verb_set: set) -> list:
 
 
 def collect_wrong_decl(tokens: list, pos_map: dict) -> list:
-    """
-    Returns edits: [(start, end, replacement, token_id, label), ...]
-    """
     edits = []
     for i, token in enumerate(tokens):
         if token.get("xpos") != "ADJA":
@@ -137,10 +120,6 @@ def collect_wrong_decl(tokens: list, pos_map: dict) -> list:
 
 
 def collect_wrong_comp(tokens: list, pos_map: dict) -> list:
-    """
-    Returns edits: [(start, end, replacement, token_id, label, score), ...]
-    Only the highest-confidence candidate per call.
-    """
     candidates = []
     for token in tokens:
         if token["id"] not in pos_map:

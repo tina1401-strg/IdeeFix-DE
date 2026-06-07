@@ -1,23 +1,3 @@
-"""
-04_inject_error_wiki_fineweb.py
---------------------------------
-Injects three types of German ASR errors into clean annotated sentences
-from FineWeb/Wikipedia.
-
-Error types:
-    $WRONG_CAP   — noun lowercased (text == verb lemma)
-    $WRONG_DECL  — adjective given wrong declension ending
-    $WRONG_COMP  — compound noun split into parts
-
-Input:  annotated wiki/fineweb JSON (flat list of {sent_id, text, tokens})
-Output: labeled JSON with err/cor/labeled fields
-
-Usage:
-    python 04_inject_error_wiki_fineweb.py \
-        --input_paths ./data/anno/wiki_fineweb_annotated.json \
-        --output      ./data/processed/wiki_fineweb_injected.json
-"""
-
 import json
 import random
 import argparse

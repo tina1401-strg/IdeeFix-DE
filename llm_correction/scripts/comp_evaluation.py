@@ -1,13 +1,3 @@
-"""
-compare_and_plot.py
--------------------
-1. Loads evaluation JSONs defined in EXPERIMENTS
-2. Writes a comparison CSV
-3. Produces two stacked bar plots from the CSV
-
-Edit EXPERIMENTS and OUTPUT_CSV to match your paths.
-"""
-
 import json
 import csv
 import os

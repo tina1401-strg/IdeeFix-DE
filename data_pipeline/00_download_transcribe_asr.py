@@ -1,24 +1,3 @@
-"""
-00.1_download_transcribe_asr.py
---------------------------------
-Downloads German ASR data from flozi00/german-asr-mixed-whisper,
-optionally applies audio degradation (TTS split), transcribes with
-Whisper, and saves only the manifest CSV — no WAV files saved.
-
-Supported splits:
-    train_el_tts      (~495 rows)  — TTS data, noise added before transcription
-    train_tuda_0      (~42k rows)  — TUDA data, deduplicated by transcript
-    train_eurospeech  (~50k rows)  — EuroSpeech data, deduplicated by transcript
-
-Outputs (all under --data_dir/<split_name>/):
-    {split}_manifest.csv     ← id, reference, hypothesis
-
-Usage:
-    python 00.1_download_transcribe_asr.py --data_dir ./data/raw --split train_eurospeech
-    python 00.1_download_transcribe_asr.py --data_dir ./data/raw --split train_tuda_0
-    python 00.1_download_transcribe_asr.py --data_dir ./data/raw --split train_el_tts --snr_db 20 --temperature 0.8
-"""
-
 import csv
 import os
 import random

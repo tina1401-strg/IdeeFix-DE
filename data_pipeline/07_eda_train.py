@@ -1,15 +1,3 @@
-"""
-06_eda.py
----------
-Exploratory Data Analysis for any GECToR split JSON.
-Analyzes:
-  1. Basic stats (sentence count, length distribution)
-  2. Error rate (how many sentences actually have errors)
-  3. Label distribution (how often each error type appears)
-  4. Data quality issues (duplicates, empty sentences)
-  5. Vocabulary / domain diversity
-"""
-
 import json
 import argparse
 from pathlib import Path
